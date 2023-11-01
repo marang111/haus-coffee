@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+	<style>
+@font-face {
+    font-family: 'PilseungGothic';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2302@1.0/PilseungGothic.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+		*{
+			margin: 0;
+			padding: 0;
+			overflow: hidden; /* 스크롤 감추기 */
+
+		}
+		#top{
+			position: absolute;
+			z-index: 9;
+			width: 100%;
+			height: 200px;
+		}
+		.title{
+			position: absolute;
+			font-size: 50px;
+			font-weight: bold;
+			top: 10px;
+			margin-left: 17px;
+			background-size: contain;
+			background-repeat: no-repeat;
+			background-color: white;
+		}
+		.text{
+			position: absolute;
+			width: 80%;
+			left: 15%;
+			font-size: 20px;
+			margin-left: 20px;
+			margin-top: 10px;
+			line-height: 30px;
+			background-color: white;
+		}
+		.text span{
+			color: blue;
+			cursor: pointer;
+			text-decoration: underline;
+		}
+		#adr{
+			position: absolute;
+			width: 40%;
+			bottom: 10px;
+			margin-left: 150px;
+			background-color: white;
+		}
+		.slo{
+			position: absolute;
+			background-image: url(slo.png);
+			display: none;
+			width: 800px;
+			height: 700px;
+			margin-top: 30px;
+			background-size: contain;
+			background-repeat: no-repeat;
+			cursor: pointer;
+		}
+		.rtext{
+			position: absolute;
+			background-color: white;
+			top: 150px;
+			left: 25px;
+			display: none;
+		}
+		.slotext{
+			position: absolute;
+			left: 15%;
+			font-size: 20px;
+			margin-left: 20px;
+			margin-top: 85px;
+			color: blue;
+			background-color: white;
+			text-decoration: underline;
+			cursor: pointer;
+		}
+		.logo{
+			position: absolute;
+			left: 15%;
+			font-size: 20px;
+			margin-left: 20px;
+			margin-top: 115px;
+			color: blue;
+			background-color: white;
+			text-decoration: underline;
+			cursor: pointer;
+		}
+		.cube{
+			position: absolute;
+			left: 15%;
+			font-size: 20px;
+			margin-left: 20px;
+			margin-top: 145px;
+			color: blue;
+			background-color: white;
+			text-decoration: underline;
+			cursor: pointer;
+		}
+		.coffee{
+			position: absolute;
+			left: 15%;
+			font-size: 20px;
+			margin-left: 20px;
+			margin-top: 175px;
+			color: blue;
+			background-color: white;
+			text-decoration: underline;
+			cursor: pointer;
+		}
+		.block_tb{
+			position: absolute;
+			top: 114px;
+			left: 0;
+			width: 97px;
+			height: 450px;
+			background-color: #B2E1BC;
+			cursor: pointer;
+		}
+		.block_tb2{
+			position: absolute;
+			top: 0;
+			left: 97px;
+			width: 127px;
+			height: 114px;
+			background-color: #686868;
+			cursor: pointer;
+		}
+		.block_tb3{
+			position: absolute;
+			bottom: 0;
+			width: 294px;
+			height: 117px;
+			background-color: #686868;
+			cursor: pointer;
+		}
+		.round_tb{
+			position: absolute;
+			width: 400px;
+			height: 320px;
+			right: 170px;
+			bottom: 190px;
+			background-color: #B2E1BC;
+			border-radius: 50%;
+			cursor: pointer;
+			z-index: 100;
+		}
+		.bar{
+			position: absolute;
+			width: 190px;
+			height: 225px;
+			background-color: orange;
+			top: 0;
+			right: 0;
+			border-radius: 0 0 0 212px;
+			cursor: pointer;
+		}
+		#logo{
+			width: 1425px;
+			height: 683px;
+			background-image: url(logo.png);
+			display: none;
+		}
+		.fab{
+			position: absolute;
+			display: none;
+			width: 400px;
+			height: 400px;
+			background-size: contain;
+			background-position: center top;
+			background-image: url(fab.jpeg);
+		}
+		.rlo{
+			position: absolute;
+			display: none;
+			width: 400px;
+			height: 540px;
+			background-size: contain;
+			background-image: url(rlogo.png);
+			background-repeat: no-repeat;
+		}
+		.rcu{
+			position: absolute;
+			display: none;
+			width: 400px;
+			height: 540px;
+			background-size: contain;
+			background-image: url(cube.png);
+			background-repeat: no-repeat;
+		}
+		.rco{
+			position: absolute;
+			display: none;
+			width: 400px;
+			height: 540px;
+			background-size: contain;
+			background-image: url(coffee.png);
+			background-repeat: no-repeat;
+		}
+	</style>
+</head>
+<body>
+	<div id="wrap">
+		<div id="top">
+			<div class="title">haus</div>
+			<div class="text">
+				하우스 커피는 바우하우스 양식을 재해석한 카페로, <span id="span">바이어의 파빌리온 </span> 포스터에서 영감을 받고 미드센츄리 모던 스타일을 더한 카페입니다.
+			</div>
+			<div class="slotext">
+				슬로건
+			</div>
+			<div class="logo">로고</div>
+			<div class="cube">큐브</div>
+			<div class="coffee">커피</div>
+		</div>
+		<div id="shape">
+			<div class="block_tb"></div>
+			<div class="block_tb2"></div>
+			<div class="block_tb3"></div>
+			<div class="round_tb">
+				<div class="fab"></div>
+				<div class="rtext">나는 아직도 포스터에 커피를 써야할 일이 남아있습니다.</div>
+				<div class="rlo"></div>
+				<div class="rcu"></div>
+				<div class="rco"></div>
+			</div>
+			
+			<div class="bar"></div>
+		</div>
+		<div class="slo"></div>
+		<div id="adr">
+			바우하우스시 바이어동 모던로 1900-85번길
+			<br>
+			1900-85, modern-ro, bayer-dong, bauhaus-si.
+		</div>
+	</div>
+</body>
+<script>
+    const colors = ["#FF5733", "#33FF57", "#3366FF", "#FF33D2", "#FFD433"];
+    let currentIndex = 0;
+
+    function changeBackgroundColor() {
+        $("body").css("background-color", colors[currentIndex]);
+        currentIndex = (currentIndex + 1) % colors.length;
+    }
+
+    function startBackgroundColorChange() {
+        setInterval(changeBackgroundColor, 5000); // 3초마다 배경 색상 변경
+    }
+
+    // 페이지가 로드될 때 실행
+    $(document).ready(function() {
+        startBackgroundColorChange();
+
+        $(".block_tb").mouseover(function(){
+        	$("#logo").show();
+        }) 
+        $(".block_tb").mouseleave(function(){
+        	$("#logo").hide();
+        })
+        $("#span").click(function(){
+        	$(".fab").show();
+        	$(".rtext").hide();
+        })
+        $(".slotext").click(function(){
+        	$(".slo").show();
+        	$(".fab").hide();
+        	$(".rtext").show();
+        }) 
+        $(".logo").click(function(){
+        	$(".rlo").show();
+        	$(".slo").hide();
+        })
+        $(".cube").click(function(){
+        	$(".rcu").show();
+        })
+        $(".coffee").click(function(){
+        	$(".rco").show();
+        })
+    });
+
+
+</script>
+</html>
